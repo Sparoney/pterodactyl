@@ -2,12 +2,10 @@ FROM        openjdk:7-slim
 
 LABEL       author="Softwarenoob" maintainer="admin@softwarenoob.com"
 
-RUN apt-get update -y \
- && apt-get install -y curl ca-certificates openssl git tar sqlite fontconfig tzdata iproute2 \
- && useradd -d /home/container -m container
+RUN         useradd -d /home/container -m container
  
-USER container
-ENV  USER=container HOME=/home/container
+USER        container
+ENV         USER=container HOME=/home/container
 
 USER        container
 ENV         USER=container HOME=/home/container
